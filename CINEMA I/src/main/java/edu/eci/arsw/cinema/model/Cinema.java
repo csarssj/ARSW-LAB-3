@@ -5,6 +5,7 @@
  */
 package edu.eci.arsw.cinema.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,6 +30,16 @@ public class Cinema {
 
     public void setName(String name) {
         this.name = name;
+    }
+    
+    public List<CinemaFunction> getFunctionsByDate(String date) {
+    	List<CinemaFunction> functionsR = new ArrayList<CinemaFunction>();
+    	for (CinemaFunction f:functions) {
+    		if(f.getDate() == date) {
+    			functionsR.add(f);
+    		}
+    	}
+		return functionsR;
     }
 
     public List<CinemaFunction> getFunctions() {
