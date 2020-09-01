@@ -32,11 +32,15 @@ public class CinemaServices {
     CinemaPersitence cps=null;
     
     public void addNewCinema(Cinema c){
-        
+        try {
+			cps.saveCinema(c);
+		} catch (CinemaPersistenceException e) {
+			throw new UnsupportedOperationException("Not supported yet."); 
+		}
     }
     
-    public Set<Cinema> getAllCinemas(){
-        return null;
+    public Set<Cinema> getAllCinemas() throws CinemaPersistenceException{
+        return cps.getCinemas();
     }
     
     /**
