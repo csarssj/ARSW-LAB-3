@@ -7,6 +7,11 @@ Si se deseea hacer uso del programa lo primero que debe realizarse el clonar el 
 git clone https://github.com/csarssj/ARSW-LAB-3.git
 
 ```
+para compilar 
+```
+mvnw package
+```
+
 ## Proyectos
 
 * [GRAMMAR-CHECKER](https://github.com/csarssj/ARSW-LAB-3/tree/master/GRAMMAR-CHECKER)
