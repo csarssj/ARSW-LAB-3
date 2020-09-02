@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import edu.eci.arsw.cinema.model.CinemaFunction;
 
-@Service("CFilter")
+@Service
 public interface CFilter {
 	
 	public List<CinemaFunction> Cfilter (List<CinemaFunction> functions, String filtro);
