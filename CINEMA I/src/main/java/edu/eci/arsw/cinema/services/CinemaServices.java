@@ -5,6 +5,7 @@
  */
 package edu.eci.arsw.cinema.services;
 
+import edu.eci.arsw.cinema.filter.CFilter;
 import edu.eci.arsw.cinema.model.Cinema;
 import edu.eci.arsw.cinema.model.CinemaFunction;
 import edu.eci.arsw.cinema.persistence.CinemaException;
@@ -30,6 +31,10 @@ public class CinemaServices {
 	@Qualifier("InMemoryCinemaPersistence")
     @Autowired
     CinemaPersitence cps=null;
+	
+	@Qualifier("Availability")
+    @Autowired
+    CFilter fps=null;
     
     public void addNewCinema(Cinema c){
         try {
@@ -70,6 +75,10 @@ public class CinemaServices {
     public List<CinemaFunction> getFunctionsbyCinemaAndDate(String cinema, String date) {
     	return cps.getFunctionsbyCinemaAndDate(cinema, date);
     }
+    public List<CinemaFunction> Cfilter (String cinema,String date, String filtro){
+    	List<CinemaFunction> functions = getFunctionsbyCinemaAndDate(cinema, date);
+    	return fps.Cfilter(functions, filtro);
+    };
 
 
 }
